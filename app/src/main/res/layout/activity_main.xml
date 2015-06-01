@@ -1,0 +1,233 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLinear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/topRelative"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        android:background="#ffff978f">
+
+        <TextView
+            android:id="@+id/topCenterPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:id="@+id/topLinear"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/topCenterPoint"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/TopDown1000"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="bottom|center"
+                android:rotation="180"
+                android:text="-1000" />
+
+            <Button
+                android:id="@+id/TopDown500"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="bottom|center"
+                android:rotation="180"
+                android:text="-500" />
+
+            <Button
+                android:id="@+id/TopDown100"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="bottom|center"
+                android:rotation="180"
+                android:text="-100" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/topHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:rotation="180"
+            android:text="Test"
+            android:textSize="100sp" />
+
+        <LinearLayout
+            android:id="@+id/botLinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/topCenterPoint"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/TopUp1000"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="top|center"
+                android:rotation="180"
+                android:text="+1000" />
+
+            <Button
+                android:id="@+id/TopUp500"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="top|center"
+                android:rotation="180"
+                android:text="+500" />
+
+            <Button
+                android:id="@+id/TopUp100"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="top|center"
+                android:rotation="180"
+                android:text="+100" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+
+        <ImageButton
+            android:id="@+id/resetScores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:src="@android:drawable/ic_delete" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/botRelative"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        android:background="#ff4e7fff">
+
+        <TextView
+            android:id="@+id/botCenterPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/botCenterPoint"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/botUp100"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="top|center"
+                android:text="+100" />
+
+            <Button
+                android:id="@+id/botUp500"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="top|center"
+                android:text="+500" />
+
+            <Button
+                android:id="@+id/botUp1000"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="top|center"
+                android:text="+1000" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/botHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Test"
+            android:textSize="100sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/botCenterPoint"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/botDown100"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="bottom|center"
+                android:text="-100" />
+
+            <Button
+                android:id="@+id/botDown500"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="bottom|center"
+                android:text="-500" />
+
+            <Button
+                android:id="@+id/botDown1000"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="33"
+                android:gravity="bottom|center"
+                android:text="-1000" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

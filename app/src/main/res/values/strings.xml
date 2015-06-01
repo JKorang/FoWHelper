@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Force of Will Life Counter</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="ruler1">Abdul Alhazred, the Harbinger of Despair</string>
+    <string name="ruler2">Agni, the Pyre War God</string>
+    <string name="ruler3">Alice, the Drifter in the World</string>
+    <string name="ruler4">Anubis, the Guardian of Throne</string>
+    <string name="ruler5">Apollon, the God of Light</string>
+    <string name="ruler6">Ares, the Knight God Emperor</string>
+
+    <string name="ruler7">Bahamut, the Dragon King</string>
+    <string name="ruler8">Barbatos, the Crimson Duke</string>
+    <string name="ruler9">Barust, the Machine God of Conflagration</string>
+    <string name="ruler10"> Black Wizard</string>
+    <string name="ruler11">Bloody Snow White</string>
+    <string name="ruler12">Blue Wizard</string>
+
+    <string name="ruler13">Cain, the Traitor of Gods</string>
+    <string name="ruler14">Commander of the Flash Knights</string>
+
+    <string name="ruler15">D'Artagnan, the Bayoneteer</string>
+    <string name="ruler16">Diabolos, the Nether Tyrant</string>
+    <string name="ruler17">Dracula, the Demonic One</string>
+
+    <string name="ruler18">Enforcer of Grudge</string>
+    <string name="ruler19">Evil Spirit, Flame Djinn</string>
+
+    <string name="ruler20">Frigg, the Goddess of Abundance</string>
+
+    <string name="ruler21">Green Wizard</string>
+    <string name="ruler22">Grimmia, the Savior of Myth</string>
+    <string name="ruler23">Guardian of Outland</string>
+
+    <string name="ruler24">Helsing, the Vampire Hunter</string>
+
+    <string name="ruler25">Jeanne d'Arc, the Flame of Hatred</string>
+
+    <string name="ruler26">Kaguya, Princess of the Moon</string>
+    <string name="ruler27">Kaguya, the Immortal Princess</string>
+
+    <string name="ruler28">Little Red, the True Fairy Tale</string>
+    <string name="ruler29">Little Red, the Wolf Girl</string>
+    <string name="ruler30">Loki, the Ancient Demon Lord</string>
+    <string name="ruler31">Lumia, the Creator of Hope</string>
+
+    <string name="ruler32">Nyarlathotep, the Faceless God</string>
+    <string name="ruler33">Nymph</string>
+
+    <string name="ruler34">Oberon, the Fairy King</string>
+    <string name="ruler35">Odin, the Ruling God</string>
+
+    <string name="ruler36">Pandora of Dark</string>
+    <string name="ruler37">Pandora of Light</string>
+
+    <string name="ruler38">Red Wizard</string>
+
+    <string name="ruler39">Salamander</string>
+    <string name="ruler40">Scheherazade, the Teller of 1001 Stories</string>
+    <string name="ruler41">Shade</string>
+    <string name="ruler42">Siegfried, the Dragon Knight</string>
+    <string name="ruler43">Sol</string>
+    <string name="ruler44">Sylph</string>
+
+    <string name="ruler45">Titania, the Fairy Queen</string>
+    <string name="ruler46">Triton, the Prince of Ocean</string>
+    <string name="ruler47">Twin Swords of Water's Mercy</string>
+
+    <string name="ruler48">Undine, the Spirit</string>
+
+    <string name="ruler49">Vafthruthnir, the Frost Giant</string>
+
+    <string name="ruler50">Warlord of Exploding Flame</string>
+
+</resources>
