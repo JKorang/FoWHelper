@@ -1,6 +1,7 @@
 package com.jkorang.forceofwilllifecounter;
 
 import android.app.Activity;
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.util.Stack;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -37,6 +40,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     //Option Buttons
     ImageButton resetButton;
+    ImageButton undoButton;
+
+    //Undo Stack
+    Stack undoStack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +74,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         //Option Buttons
         resetButton = (ImageButton) findViewById(R.id.resetScores);
+        undoButton = (ImageButton) findViewById(R.id.undoButton);
+
+        //Undo stack
+        undoStack = new Stack();
 
         //Click Listeners for Days
         topUp100.setOnClickListener(this);
@@ -82,6 +93,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         botDown500.setOnClickListener(this);
         botDown1000.setOnClickListener(this);
         resetButton.setOnClickListener(this);
+        undoButton.setOnClickListener(this);
 
         resetHP();
 
@@ -90,6 +102,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void resetHP() {
         topLife.setText("4000");
         botLife.setText("4000");
+        undoStack = new Stack();
     }
 
     @Override
@@ -102,48 +115,87 @@ public class MainActivity extends Activity implements View.OnClickListener {
             //Top Case
             case R.id.TopUp100:
                 topLife.setText(String.valueOf(topLifeInt + 100));
+                undoStack.push(new actionTaken(0, 100));
                 break;
             case R.id.TopUp500:
                 topLife.setText(String.valueOf(topLifeInt + 500));
+                undoStack.push(new actionTaken(0, 500));
                 break;
             case R.id.TopUp1000:
                 topLife.setText(String.valueOf(topLifeInt + 1000));
+                undoStack.push(new actionTaken(0, 1000));
                 break;
             case R.id.TopDown100:
                 topLife.setText(String.valueOf(topLifeInt - 100));
+                undoStack.push(new actionTaken(0, -100));
                 break;
             case R.id.TopDown500:
                 topLife.setText(String.valueOf(topLifeInt - 500));
+                undoStack.push(new actionTaken(0, -500));
                 break;
             case R.id.TopDown1000:
                 topLife.setText(String.valueOf(topLifeInt - 1000));
+                undoStack.push(new actionTaken(0, -1000));
                 break;
 
             //Bot Case
             case R.id.botUp100:
                 botLife.setText(String.valueOf(botLifeInt + 100));
+                undoStack.push(new actionTaken(1, 100));
                 break;
             case R.id.botUp500:
                 botLife.setText(String.valueOf(botLifeInt + 500));
+                undoStack.push(new actionTaken(1, 500));
                 break;
             case R.id.botUp1000:
                 botLife.setText(String.valueOf(botLifeInt + 1000));
+                undoStack.push(new actionTaken(1, 1000));
                 break;
             case R.id.botDown100:
                 botLife.setText(String.valueOf(botLifeInt - 100));
+                undoStack.push(new actionTaken(1, -100));
                 break;
             case R.id.botDown500:
                 botLife.setText(String.valueOf(botLifeInt - 500));
+                undoStack.push(new actionTaken(1, -500));
                 break;
             case R.id.botDown1000:
                 botLife.setText(String.valueOf(botLifeInt - 1000));
+                undoStack.push(new actionTaken(1, -1000));
                 break;
 
             //Options
             case R.id.resetScores:
                 resetHP();
                 break;
+            case R.id.undoButton:
+                undoAction();
+                break;
 
+        }
+    }
+
+    private void undoAction() {
+        if (undoStack.empty() != true) {
+            int topLifeInt = Integer.parseInt(topLife.getText().toString());
+            int botLifeInt = Integer.parseInt(botLife.getText().toString());
+            actionTaken at = (actionTaken) undoStack.pop();
+
+            if (at.playerAction == 0) {
+                topLife.setText(String.valueOf(topLifeInt - at.amountChanged));
+            } else if (at.playerAction == 1) {
+                botLife.setText(String.valueOf(botLifeInt - at.amountChanged));
+            }
+        }
+    }
+
+    private class actionTaken {
+        int playerAction;
+        int amountChanged;
+
+        public actionTaken(int player, int amount) {
+            this.playerAction = player;
+            this.amountChanged = amount;
         }
     }
 }
