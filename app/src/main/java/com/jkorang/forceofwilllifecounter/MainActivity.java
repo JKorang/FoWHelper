@@ -1,6 +1,7 @@
 package com.jkorang.forceofwilllifecounter;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -49,6 +50,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Backgrounds
+        Drawable topBackground = getResources().getDrawable(R.drawable.wolfgirl);
+        Drawable botBackground = getResources().getDrawable(R.drawable.lumia);
+        findViewById(R.id.topImage).setBackground(topBackground);
+        findViewById(R.id.botImage).setBackground(botBackground);
 
         //Top Buttons
         topUp100 = (Button) findViewById(R.id.TopUp100);

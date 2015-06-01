@@ -1,9 +1,11 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mainLinear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff000000"
+    android:keepScreenOn="true"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -11,12 +13,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topImage"
+        android:layout_alignBottom="@+id/topRelative"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:rotation="180"/>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/botImage"
+        android:scaleType="fitXY"
+        android:layout_alignTop="@+id/botRelative"
+        android:layout_alignParentBottom="true" />
+
     <RelativeLayout
         android:id="@+id/topRelative"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="45"
-        android:background="#ffff978f">
+        android:rotation="180"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="#55ffffff"
+        android:layout_above="@+id/relativeLayout">
 
         <TextView
             android:id="@+id/topCenterPoint"
@@ -39,30 +64,27 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="33"
-                android:gravity="bottom|center"
-                android:rotation="180"
+                android:layout_weight="15"
+                android:gravity="top|center"
                 android:text="-1000" />
-
-            <Button
-                android:id="@+id/TopDown500"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_weight="33"
-                android:gravity="bottom|center"
-                android:rotation="180"
-                android:text="-500" />
 
             <Button
                 android:id="@+id/TopDown100"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="33"
-                android:gravity="bottom|center"
-                android:rotation="180"
+                android:layout_weight="70"
+                android:gravity="top|center"
                 android:text="-100" />
+
+            <Button
+                android:id="@+id/TopDown500"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="15"
+                android:gravity="top|center"
+                android:text="-500" />
         </LinearLayout>
 
 
@@ -72,9 +94,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:rotation="180"
             android:text="Test"
-            android:textSize="100sp" />
+            android:textSize="100sp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
 
         <LinearLayout
             android:id="@+id/botLinear"
@@ -90,38 +113,39 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="33"
-                android:gravity="top|center"
-                android:rotation="180"
+                android:layout_weight="15"
+                android:gravity="bottom|center"
                 android:text="+1000" />
-
-            <Button
-                android:id="@+id/TopUp500"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_weight="33"
-                android:gravity="top|center"
-                android:rotation="180"
-                android:text="+500" />
 
             <Button
                 android:id="@+id/TopUp100"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="33"
-                android:gravity="top|center"
-                android:rotation="180"
+                android:layout_weight="70"
+                android:gravity="bottom|center"
                 android:text="+100" />
+
+            <Button
+                android:id="@+id/TopUp500"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="15"
+                android:gravity="bottom|center"
+                android:text="+500" />
         </LinearLayout>
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10">
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/relativeLayout">
 
         <ImageButton
             android:id="@+id/resetScores"
@@ -136,8 +160,8 @@
             android:id="@+id/undoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_centerHorizontal="true"
             android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
 
@@ -148,7 +172,11 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="45"
-        android:background="#ff4e7fff">
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#55ffffff"
+        android:layout_alignParentBottom="true">
 
         <TextView
             android:id="@+id/botCenterPoint"
@@ -166,29 +194,29 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/botUp100"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_weight="33"
-                android:gravity="top|center"
-                android:text="+100" />
-
-            <Button
                 android:id="@+id/botUp500"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="33"
+                android:layout_weight="15"
                 android:gravity="top|center"
                 android:text="+500" />
+
+            <Button
+                android:id="@+id/botUp100"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="70"
+                android:gravity="top|center"
+                android:text="+100" />
 
             <Button
                 android:id="@+id/botUp1000"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="33"
+                android:layout_weight="15"
                 android:gravity="top|center"
                 android:text="+1000" />
         </LinearLayout>
@@ -199,8 +227,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:textColor="#000000"
             android:text="Test"
-            android:textSize="100sp" />
+            android:textSize="100sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -211,33 +241,33 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/botDown100"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_weight="33"
-                android:gravity="bottom|center"
-                android:text="-100" />
-
-            <Button
                 android:id="@+id/botDown500"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="33"
+                android:layout_weight="15"
                 android:gravity="bottom|center"
                 android:text="-500" />
+
+            <Button
+                android:id="@+id/botDown100"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="70"
+                android:gravity="bottom|center"
+                android:text="-100" />
 
             <Button
                 android:id="@+id/botDown1000"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="33"
+                android:layout_weight="15"
                 android:gravity="bottom|center"
                 android:text="-1000" />
         </LinearLayout>
 
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>
