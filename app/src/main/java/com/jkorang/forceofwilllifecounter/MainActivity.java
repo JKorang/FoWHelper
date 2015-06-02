@@ -107,8 +107,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public void resetHP() {
-        topLife.setText("4000");
-        botLife.setText("4000");
+        topLife.setText(R.string.startingLife);
+        botLife.setText(R.string.startingLife);
         undoStack = new Stack();
     }
 

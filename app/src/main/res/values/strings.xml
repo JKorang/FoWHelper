@@ -72,5 +72,6 @@
     <string name="ruler49">Vafthruthnir, the Frost Giant</string>
 
     <string name="ruler50">Warlord of Exploding Flame</string>
+    <string name="startingLife">4000</string>
 
 </resources>
